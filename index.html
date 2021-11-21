@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <header>CSS</header>
+        <ul>
+            <li><a href="#Cascading_Style_Sheets_(CSS)" class="nav-link">Cascading Style Sheets (CSS)</a></li>
+            <li><a href="#Selector" class="nav-link">Selector</a></li>
+            <li><a href="#Length_units" class="nav-link">Length units</a></li>
+            <li><a href="#DECLARATION_BLOCK" class="nav-link">Declaration Block</a></li>
+            <li><a href="#Sources" class="nav-link">Sources</a></li>
+            <li><a href="#Specificity" class="nav-link">Specificity</a></li>
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="Cascading_Style_Sheets_(CSS)">
+            <header>Cascading Style Sheets (CSS)</header>
+            <article>
+                <p> is a style sheet language used for describing the presentation of a document written in a markup
+                    language such as HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and
+                    JavaScript.</p>
+                <p>CSS is designed to enable the separation of presentation and content, including layout, colors, and
+                    fonts. This separation can improve content accessibility, provide more flexibility and control in
+                    the specification of presentation characteristics, enable multiple web pages to share formatting by
+                    specifying the relevant CSS in a separate .css file which reduces complexity and repetition in the
+                    structural content as well as enabling the .css file to be cached to improve the page load speed
+                    between the pages that share the file and its formatting.</p>
+                <p>Separation of formatting and content also makes it feasible to present the same markup page in
+                    different styles for different rendering methods, such as on-screen, in print, by voice (via
+                    speech-based browser or screen reader), and on Braille-based tactile devices. CSS also has rules for
+                    alternate formatting if the content is accessed on a mobile device.</p>
+            </article>
+        </section>
+        <section class="main-section" id="Selector">
+            <header>Selector</header>
+            <article>
+                <p>In CSS, selectors declare which part of the markup a style applies to by matching tags and attributes
+                    in the markup itself.</p>
+                <p>Selectors may apply to the following:</p>
+                <ul>
+                    <li>all elements of a specific type, e.g. the second-level headers h2</li>
+                    <li>elements specified by attribute, in particular:<ul>
+                            <li>id: an identifier unique within the document, identified with a hash prefix e.g. #id
+                            </li>
+                            <li>class: an identifier that can annotate multiple elements in a document, identified with
+                                a period prefix e.g. <code>.classname</code> </li>
+                        </ul>
+                    <li>elements depending on how they are placed relative to others in the document tree.</li>
+                    </li>
+                </ul>
+                <p>Classes and IDs are case-sensitive, start with letters, and can include alphanumeric characters,
+                    hyphens, and underscores. A class may apply to any number of instances of any elements. An ID may
+                    only be applied to a single element.</p>
+
+                <p> Pseudo-classes are used in CSS selectors to permit formatting based on information that is not
+                    contained in the document tree. One example of a widely used pseudo-class is <code
+                        style="color:blue;">:hover</code>, which
+                    identifies content only when the user "points to" the visible element, usually by holding the mouse
+                    cursor over it. It is appended to a selector as in<code style="color:blue;"> a:hover </code>or <code
+                        style="color:blue;">#elementid:hover</code>. A pseudo-class
+                    classifies document elements, such as<code style="color:blue;">:link</code> or <code
+                        style="color:blue;">:visited</code>, whereas a
+                    pseudo-element makes a selection that may consist of partial elements, such
+                    as<code style="color:blue;"> ::first-line</code> or <code style="color:blue;">::first-letter</code>
+                </p>
+                <table class="table-selector">
+                    <tr style="background-color: grey;">
+                        <th style="color: white;">Pattern</th>
+                        <th style="color: white;">Matches </th>
+                        <th style="color: white;">First defined
+                            in CSS level</th>
+                    </tr>
+                    <tr>
+                        <th style="color:green;"><code>E</code></th>
+                        <th>an element of type E</th>
+                        <th>1</th>
+                    </tr>
+                    <tr>
+                        <th style="color:green;"><code>E:link</code></th>
+                        <th> an E element is the source anchor of a hyperlink of which the target is not yet visited
+                            (:link) or already visited (:visited)</th>
+                        <th>1</th>
+                    </tr>
+                    <tr>
+                        <th style="color:green;"><code>E:active</code></th>
+                        <th>an E element during certain user actions</th>
+                        <th>1</th>
+                    </tr>
+                    <tr>
+                        <th style="color:green;"><code>E::first-line</code></th>
+                        <th>athe first formatted line of an E element</th>
+                        <th>1</th>
+                    </tr>
+                    <tr>
+                        <th style="color:green;"><code>E::first-letter</code></th>
+                        <th>the first formatted letter of an E element</th>
+                        <th>1</th>
+                    </tr>
+                    <tr>
+                        <th style="color:green;"><code>.c</code></th>
+                        <th>all elements with class="c"</th>
+                        <th>1</th>
+                    </tr>
+                    <tr>
+                        <th style="color:green;"><code>#myid</code></th>
+                        <th>the element with id="myid" </th>
+                        <th>1</th>
+                    </tr>
+                    <tr>
+                        <th style="color:green;"><code>E.warning</code></th>
+                        <th>an E element whose class is "warning" (the document language specifies how class is
+                            determined)</th>
+                        <th>1</th>
+                    </tr>
+                </table>
+            </article>
+            <section class="main-section" id="DECLARATION_BLOCK">
+                <header>Declaration block</header>
+                <p>A declaration block consists of a list of declarations in braces. Each declaration itself consists of
+                    a property, a colon (:), and a value. If there are multiple declarations in a block, a semi-colon
+                    (;) must be inserted to separate each declaration. An optional semi-colon after the last (or single)
+                    declaration may be used.</p>
+                <p>Properties are specified in the CSS standard. Each property has a set of possible values. Some
+                    properties can affect any type of element, and others apply only to particular groups of elements.
+                </p>
+                <p>Values may be keywords, such as "center" or "inherit", or numerical values, such as
+                    <code>200px</code>(200
+                    pixels), <code>50vw</code> (50 percent of the viewport width) or 80% (80 percent of the parent
+                    element's width).
+                    Color values can be specified with keywords (e.g. <code>"red"</code>), hexadecimal values (e.g.
+                    <code>#FF0000</code>, also
+                    abbreviated as #F00), RGB values on a 0 to 255 scale (e.g. <code>rgb(255, 0, 0)</code>), RGBA values
+                    that specify
+                    both color and alpha transparency (e.g. <code>rgba(255, 0, 0, 0.8)</code>), or HSL or HSLA values
+                    (e.g. <code>hsl(000,
+                    100%, 50%)</code>, <code>hsla(000, 100%, 50%, 80%)</code>).
+                </p>
+            </section>
+            <section class="main-section" id="Length_units">
+                <header>Length units</header>
+                <p>Non-zero numeric values representing linear measures must include a length unit, which is either an
+                    alphabetic code or abbreviation, as in <code>200px</code> or <code>50vw</code>; or a percentage
+                    sign, as in <code>80%</code>. Some units –
+                    <code>cm</code> (<span style="color:blue">centimetre</span>); <code>in </code>(<span
+                        style="color:blue">inch</span>); <code>mm</code> (<span style="color:blue">millimetre</span>);
+                    <code>pc</code>
+                    (<span style="color:blue">pica</span>); and <code>pt</code> (<span style="color:blue">point</span>)
+                    – are <span style="font-weight:bold;">absolute</span>, which means
+                    that the rendered dimension does not depend upon the structure of the page; others – <code>em</code>
+                    (<span style="color:blue">em</span>); <code>>ex</code>
+                    (<span style="color:blue">ex</span>) and <code>px</code>(<span style="color:blue">pixel</span>) –
+                    are relative, which means that factors such as the font size of a parent
+                    element can affect the rendered measurement. These eight units were a feature of CSS 1 and
+                    retained in all subsequent revisions. The proposed CSS Values and Units Module Level 3 will, if
+                    adopted as a W3C Recommendation, provide seven further length units:<code>ch; Q; rem; vh; vmax; vmin; and
+                    vw</code>.
+                </p>
+                <h6>Use</h6>
+                <p>
+                    Before CSS, nearly all presentational attributes of HTML documents were contained within the HTML
+                    markup. All font colors, background styles, element alignments, borders and sizes had to be
+                    explicitly described, often repeatedly, within the HTML. CSS lets authors move much of that
+                    information to another file, the style sheet, resulting in considerably simpler HTML.
+                </p>
+                <p>
+                    For example, headings (<code>h1</code> elements), sub-headings (<code>h2</code>), sub-sub-headings
+                    (<code>h3</code>), etc.,
+                    are defined structurally using HTML. In print and on the screen, choice of font, size, color and
+                    emphasis for these elements is <italic>presentational</italic>.
+                </p>
+                <p>
+                    Before CSS, document authors who wanted to assign such typographic characteristics to, say, all
+                    <code>h2</code>
+                    headings had to repeat HTML presentational markup for each occurrence of that heading type. This
+                    made documents more complex, larger, and more error-prone and difficult to maintain. CSS allows the
+                    separation of presentation from structure. CSS can define color, font, text alignment, size,
+                    borders, spacing, layout and many other typographic characteristics, and can do so independently for
+                    on-screen and printed views. CSS also defines non-visual styles, such as reading speed and emphasis
+                    for aural text readers. The W3C has now deprecated the use of all presentational HTML markup.
+                </p>
+                <p>
+                    <code><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;&lt;</span><span class="nt">font</span> <span class="na">color</span><span class="o">=</span><span class="s">"red"</span><span class="p">&gt;</span>Chapter 1.<span class="p">&lt;/</span><span class="nt">font</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+                    </pre></code>
+                </p>
+                <p>
+                    Using CSS, the same element can be coded using style properties instead of HTML presentational
+                    attributes:
+                </p>
+                <p><code><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span> <span class="na">style</span><span class="o">=</span><span class="s">"color: red;"</span><span class="p">&gt;</span>Chapter 1.<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+ </pre></code></p>
+                <p>The advantages of this may not be immediately clear but the power of CSS becomes more apparent when
+                    the style properties are placed in an internal style element or, even better, an external CSS file.
+                    For example, suppose the document contains the style element:</p>
+                <p><code><pre><span></span><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+                    <span class="nt">h1</span> <span class="p">{</span>
+                        <span class="k">color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+                </pre></code></p>
+                <p>rather than by laboriously going through the document and changing the color for each individual
+                    <code>h1</code> element.
+                </p>
+                <p>The styles can also be placed in an external CSS file, as described below, and loaded using syntax
+                    similar to:</p>
+                <p><code><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">"path/to/file.css"</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/css"</span><span class="p">&gt;</span>
+                </pre></code></p>
+                <p>This further decouples the styling from the HTML document and makes it possible to restyle multiple
+                    documents by simply editing a shared external CSS file.
+                </p>
+            </section>
+            <section class="main-section" id="Sources">
+                <header>Sources </header>
+                <p>CSS information can be provided from various sources. These sources can be the web browser, the user
+                    and the author. The information from the author can be further classified into inline, media type,
+                    importance, selector specificity, rule order, inheritance and property definition. CSS style
+                    information can be in a separate document or it can be embedded into an HTML document. Multiple
+                    style sheets can be imported. Different styles can be applied depending on the output device being
+                    used; for example, the screen version can be quite different from the printed version, so that
+                    authors can tailor the presentation appropriately for each medium.</p>
+                <p>The style sheet with the highest priority controls the content display. Declarations not set in the
+                    highest priority source are passed on to a source of lower priority, such as the user agent style.
+                    The process is called <italic>cascading.</italic>
+                </p>
+                <p>One of the goals of CSS is to allow users greater control over presentation. Someone who finds red
+                    italic headings difficult to read may apply a different style sheet. Depending on the browser and
+                    the web site, a user may choose from various style sheets provided by the designers, or may remove
+                    all added styles and view the site using the browser's default styling, or may override just the red
+                    italic heading style without altering other attributes.</p>
+                <h5>
+                    CSS priority scheme (highest to lowest)</h5>
+                <table class="table-selector">
+                    <tr style="background-color: grey;">
+                        <th style="color: white;">Priority</th>
+                        <th style="color: white;">CSS source type</th>
+                        <th style="color: white;">Description</th>
+                    </tr>
+                    <tr>
+                        <th>1</th>
+                        <th>Importance</th>
+                        <th>The <span style="color:green;">"!important"</span> annotation overwrites the previous
+                            priority types</th>
+                    </tr>
+                    <tr>
+                        <th>2</th>
+                        <th>Inline</th>
+                        <th>A style applied to an HTML element via HTML "style" attribute</th>
+                    </tr>
+                    <tr>
+                        <th>3</th>
+                        <th>Media Type</th>
+                        <th> A property definition applies to all media types, unless a media specific CSS is defined
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>4</th>
+                        <th>User defined</th>
+                        <th>Most browsers have the accessibility feature: a user defined CSS</th>
+                    </tr>
+                    <tr>
+                        <th>5</th>
+                        <th>Selector specificity</th>
+                        <th> A specific contextual selector (<code>#heading p</code>) overwrites generic definition</th>
+                    </tr>
+                    <tr>
+                        <th>6</th>
+                        <th>Rule order</th>
+                        <th>Last rule declaration has a higher priority
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>7</th>
+                        <th>Parent inheritance</th>
+                        <th> If a property is not specified, it is inherited from a parent element</th>
+                    </tr>
+                    <tr>
+                        <th>8</th>
+                        <th>CSS property definition in HTML document</th>
+                        <th>CSS rule or CSS inline style overwrites a default browser value</th>
+                    </tr>
+                </table>
+            </section>
+            <section class="main-section" id="Specificity">
+                <header>Specificity</header>
+                <p>
+                    <italic>Specificity</italic> refers to the relative weights of various rules. It determines which
+                    styles apply to an element when more than one rule could apply. Based on specification, a simple
+                    selector (e.g. H1) has a specificity of 1, class selectors have a specificity of 1,0, and ID
+                    selectors a specificity of 1,0,0. Because the specificity values do not carry over as in the decimal
+                    system, commas are used to separate the "digits" (a CSS rule having 11 elements and 11 classes would
+                    have a specificity of 11,11, not 121).
+                </p>
+                <p>Thus the following rules selectors result in the indicated specificity:</p>
+                <table class="table-selector">
+                    <tr style="background-color: grey;">
+                        <th style="color: white;">Selectors</th>
+                        <th style="color: white;">Specificity</th>
+                    </tr>
+                    <tr>
+                        <th>h1 {color: white;}</th>
+                        <th>0, 0, 0, 1</th>
+                    </tr>
+                    <tr>
+                        <th>p em {color: green;}</th>
+                        <th>0, 0, 0, 2</th>
+                    </tr>
+                    <tr>
+                        <th>.grape {color: red;}</th>
+                        <th>0, 0, 1, 0</th>
+                    </tr>
+                    <tr>
+                        <th>p.bright {color: blue;}</th>
+                        <th>0, 0, 1, 1</th>
+                    </tr>
+                    <tr>
+                        <th>p.bright em.dark {color: yellow;}</th>
+                        <th>0, 0, 2, 2</th>
+                    </tr>
+                    <tr>
+                        <th>#id218 {color: brown;}</th>
+                        <th>0, 1, 0, 0</th>
+                    </tr>
+                    <tr>
+                        <th>style=" "</th>
+                        <th>1, 0, 0, 0</th>
+                    </tr>
+                </table>
+                <h6>Examples</h6>
+                <p>Consider this HTML fragment:</p>
+                <P><code><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+                            <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
+                            <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+                                <span class="p">#</span><span class="nn">xyz</span> <span class="p">{</span> <span class="k">color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span> <span class="p">}</span>
+                            <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+                        <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+                            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">"xyz"</span> <span class="na">style</span><span class="o">=</span><span class="s">"color: green;"</span><span class="p">&gt;</span><br>   To demonstrate specificity<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+                        <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+                    </pre></code></P>
+                <p>In the above example, the declaration in the style attribute overrides the one in the <<span>
+                        style</span>> element because it has a higher specificity, and thus, the paragraph appears
+                        green.</p>
+            </section>
+        </section>
+    </main>
+</body>
+
+</html>
